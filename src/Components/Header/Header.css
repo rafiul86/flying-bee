@@ -1,0 +1,22 @@
+.style-header{
+    background-color: chartreuse;
+}
+.header nav{
+margin-right: 80px;
+display: flex;
+flex-direction: row-reverse;
+justify-content: right;
+}
+
+nav a{
+    text-decoration: none;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    font-size: medium;
+    font-weight: 400;
+}
+.header-name{
+    margin-top: 80px;
+    margin-left: 50px;
+    color: blueviolet;
+}

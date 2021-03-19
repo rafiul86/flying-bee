@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from "react";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
+import Headers from "./Components/Header/Headers";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Destination from "./Components/Destination/Destination";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import { Container } from "@material-ui/core";
 
-function App() {
+export const UserContext = createContext();
+        
+const App = () => {
+    const [loggedInUser,setLoggedInUser] = useState({})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <div>
+      <Headers />
+      <Router>
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+          <PrivateRoute path="/:booking">
+            <Destination/>
+          </PrivateRoute>
+        </Switch>
+      </Router>
     </div>
+    </UserContext.Provider>
+      </Container>
   );
-}
+};
 
 export default App;
