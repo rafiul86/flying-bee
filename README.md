@@ -1,8 +1,8 @@
-## Now a days transport service is a cruicaial for everyone specially for the inhabitant of mega city.
+## Now a days transport service is crucial for everyone specially for the inhabitant of mega city.
 
 ![https://images.unsplash.com/photo-1415594445260-63e18261587e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dHJhZmZpY3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80](https://images.unsplash.com/photo-1415594445260-63e18261587e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dHJhZmZpY3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80)
 
-### This website is come here to facilitate the entrepreneur to start their transport bussiness make handy.
+### This website is  here to ease  the entrepreneurship to start  transport bussiness make handy.
 *Key Features of the Web Application*
 
 1. Choose your vehicle .
