@@ -22,9 +22,9 @@ const Login = () => {
     firebase.auth()
   .signInWithPopup(googleProvider)
   .then((result) =>  {
-    console.log(result.user)
+ 
     const {displayName, email} = result.user;
-    console.log(result.user)
+      console.log(result.user)
     const signedInUser = { name : displayName, email}
     setUser(signedInUser)
     setLoggedInUser(signedInUser)
@@ -40,7 +40,7 @@ const Login = () => {
   .signInWithPopup(fbProvider)
   .then((result) => {
     const {displayName, email} = result.user;
-    console.log(result.user)
+ 
     const signedInUser = { name : displayName, email}
     setUser(signedInUser)
     setLoggedInUser(signedInUser)

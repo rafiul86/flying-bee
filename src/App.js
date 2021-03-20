@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/login">
             <Login/>
           </Route>
-          <PrivateRoute path="/:booking">
+          <PrivateRoute path="/:id">
             <Destination/>
           </PrivateRoute>
         </Switch>

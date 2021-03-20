@@ -1,9 +1,5 @@
 import React from 'react';
-import './Header.css'
-import {
-    BrowserRouter as Router,
-    Link
-  } from "react-router-dom";
+import './Header.css';
 import { Grid } from '@material-ui/core';
 
 const Header = () => {
@@ -25,8 +21,6 @@ const Header = () => {
             </nav>
             </Grid>
             </div>
-           
-          
           </div>  
     );
 };

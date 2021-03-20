@@ -22,7 +22,7 @@ const Transport = ({transport}) => {
         const url = `/${title}`;
         history.push(url);
     }
-    const {title,imgUrl,description} = transport;
+    const {title,photo,id,description} = transport;
     const classes = useStyles();
     return (
         <div>
@@ -32,7 +32,7 @@ const Transport = ({transport}) => {
           component="img"
           alt={title}
           height="140"
-          image={imgUrl}
+          image={photo}
           title={title}
         />
         <CardContent>
