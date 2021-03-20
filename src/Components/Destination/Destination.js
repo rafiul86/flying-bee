@@ -1,10 +1,42 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import { Container } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
+import { GoogleMap, LoadScript,Marker } from '@react-google-maps/api';
 
 
-
-        
+const containerStyle = {
+    width: '800px',
+    height: '400px'
+  };
+  
+  const position = {
+    lat: 23.7461,
+    lng: 90.3742
+  };
+  
+  function Map() {
+    const onLoad = marker => {
+        console.log('marker: ', marker)
+      }
+    return (
+      <LoadScript
+        googleMapsApiKey="AIzaSyBME9WMmSYz_2iXjSI_OKGCs0lMaIlyg5I"
+      >
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={position}
+          zoom={6}
+        >
+          <Marker
+      onLoad={onLoad}
+      position={position}
+    />
+        </GoogleMap>
+      </LoadScript>
+    )
+  }
+  
+  
 const Destination = () => {
         const [userLocation,setUserLocation] = useState({
             isVaid : false,
@@ -32,12 +64,11 @@ const Destination = () => {
 
 
     return (
-        <Container>
-        <div>
-            <h1>This is your {id}.</h1>
+                <Grid container style={{display : 'flex'}}>
+                    <Grid item  xs={12} lg={4}>
             {userLocation.isVaid && <div> <img src="" alt=""/> <p style={{color : 'purple' , fontWeight : '20px' }}>Thank you for choosing {userLocation.location} the ride {userLocation.location} . Your rider will contact you in seconds !</p> </div>}
-        </div>
-        <div id="show">   
+    
+     
             <form  style={{display : 'block'}} onSubmit={handleLocation}>
                 <label htmlFor="Start From"> Start From</label>
                 <br/>
@@ -51,9 +82,11 @@ const Destination = () => {
                 <br/>
                 <input type="submit"/>
             </form>
-        </div>
-        
- </Container>
+            </Grid>
+            <Grid item xs={12} lg={8}>
+            <Map></Map>
+            </Grid>
+            </Grid>
     );
 };
 
