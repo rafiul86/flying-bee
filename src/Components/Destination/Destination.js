@@ -66,7 +66,7 @@ const Destination = () => {
     return (
                 <Grid container style={{display : 'flex'}}>
                     <Grid item  xs={12} lg={4}>
-            {userLocation.isVaid && <div> <img src="" alt=""/> <p style={{color : 'yellow' , fontWeight : '20px' }}>Thank you for choosing {userLocation.location} the ride {userLocation.location} . Your rider will contact you in seconds !</p> </div>}
+            {userLocation.isVaid && <div> <img src="" alt=""/> <p style={{color : 'goldenrod' , fontWeight : '20px' }}>Thank you for choosing {userLocation.location} the ride {userLocation.location} . Your rider will contact you in seconds !</p> </div>}
     
      
             <form  style={{display : 'block'}} onSubmit={handleLocation}>

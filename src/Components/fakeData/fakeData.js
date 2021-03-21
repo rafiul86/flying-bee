@@ -16,7 +16,7 @@ const fakeData = [
     {
         id : 3,
         title: 'Family Favorite',
-        photo:'https://lh3.googleusercontent.com/proxy/bly4Z3ND4gywG5lFg_cfwTTM-MjnuCflgJCnoLC4fv9eEaTHDXN9OALFPrPvhzmpUlvX5MNMwGQofXPTbMNsfmJAIscm',
+        photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVtBGnFTfzOTndpA_kPSLycMcKyp1PBzH6ig&usqp=CAU',
         price: 130,
         description : 'Hassle free journey with comfort'
     },
