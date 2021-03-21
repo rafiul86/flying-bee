@@ -4,6 +4,7 @@ import { Container, Grid } from '@material-ui/core';
 import { GoogleMap, LoadScript,Marker } from '@react-google-maps/api';
 import fakeData from '../fakeData/fakeData'
 
+
 const containerStyle = {
     width: '800px',
     height: '400px'
@@ -38,13 +39,15 @@ const containerStyle = {
   
   
 const Destination = () => {
+  const {title} = useParams()
+  const vehicles = fakeData.find(vehicle => vehicle.title === title)
+  console.log(vehicles)
         const [userLocation,setUserLocation] = useState({
             isVaid : false,
             startLocation : '',
             endLocation : ''
         })
-    const {id}= useParams();
-   
+    
         const handleLocation = (e)=>{
             let destination = true;
             if(e.target.name==="startLocation" && e.target.name==="endLocation"){
@@ -63,8 +66,11 @@ const Destination = () => {
 
     return (
                 <Grid container style={{display : 'flex'}}>
-                    <Grid item  xs={12} lg={4}>
-            {userLocation.isVaid &&  userLocation.startLocation !== '' && userLocation.endLocation !== '' && <div>  <p style={{color : 'goldenrod' , fontWeight : '20px' }}>Thank you for choosing from { userLocation.startLocation} to {userLocation.endLocation} . Your rider will contact you in seconds !</p> </div>}
+                    <Grid item  xs={8} lg={5}>
+                      <h3>Thank you for choosing <span style={{color:"lawngreen"}}> {title}</span> on your way.</h3>
+                      <img style={{width:"70%",position:'relative', borderRadius:'5px' }} src={vehicles.photo} alt=""/>
+                      <br/>
+            {userLocation.isVaid &&  userLocation.startLocation !== '' && userLocation.endLocation !== '' && <div>  <p style={{color : 'lawngreen' , fontWeight : '20px' }}>Thank you for choosing from { userLocation.startLocation} to {userLocation.endLocation} . Your rider will contact you in seconds !</p> </div>}
           
                 <label for="start"><input type="text" onBlur={handleLocation} name="startLocation" id="start"  placeholder="your starting point" required/></label>
                 <br/>
@@ -72,7 +78,7 @@ const Destination = () => {
               <input type="submit"/>
             
             </Grid>
-            <Grid item xs={12} lg={8}>
+            <Grid item xs={8} lg={7}>
             <Map></Map>
             </Grid>
             </Grid>
