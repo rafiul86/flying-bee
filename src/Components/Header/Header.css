@@ -1,6 +1,4 @@
-.style-header{
-    background-color: chartreuse;
-}
+
 .header nav{
 margin-right: 80px;
 display: flex;
@@ -10,6 +8,7 @@ justify-content: right;
 
 nav a{
     text-decoration: none;
+    color: cornsilk;
     margin-right: 80px;
     margin-bottom: 80px;
     font-size: medium;
@@ -18,5 +17,5 @@ nav a{
 .header-name{
     margin-top: 80px;
     margin-left: 50px;
-    color: blueviolet;
+    color :lawngreen;
 }

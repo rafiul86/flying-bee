@@ -34,7 +34,7 @@ const Login = () => {
 });
   }
    const handleFaceBookSignIn = () =>{
-    var fbProvider = new firebase.auth.FacebookAuthProvider();
+    const  fbProvider = new firebase.auth.FacebookAuthProvider();
     firebase
   .auth()
   .signInWithPopup(fbProvider)

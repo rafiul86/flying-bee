@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Destination from "./Components/Destination/Destination";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { Container } from "@material-ui/core";
+import './App.css'
 
 export const UserContext = createContext();
         
