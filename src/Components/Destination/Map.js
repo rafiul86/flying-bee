@@ -1,30 +1,27 @@
-import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import React from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: "800px",
+  height: "400px",
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
+const position = {
+  lat: 23.7461,
+  lng: 90.3742,
 };
 
 function Map() {
+  const onLoad = (marker) => {
+    console.log("marker: ", marker);
+  };
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyBME9WMmSYz_2iXjSI_OKGCs0lMaIlyg5I"
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-      >
-        
+    <LoadScript googleMapsApiKey="AIzaSyBME9WMmSYz_2iXjSI_OKGCs0lMaIlyg5I">
+      <GoogleMap mapContainerStyle={containerStyle} center={position} zoom={6}>
+        <Marker onLoad={onLoad} position={position} />
       </GoogleMap>
     </LoadScript>
-  )
+  );
 }
 
-export default React.memo(Map)
+export default React.memo(Map);
