@@ -44,6 +44,7 @@ const Destination = () => {
             endLocation : ''
         })
     const {id}= useParams();
+   
         const handleLocation = (e)=>{
             let destination = true;
             if(e.target.name==="startLocation" && e.target.name==="endLocation"){
@@ -63,7 +64,7 @@ const Destination = () => {
     return (
                 <Grid container style={{display : 'flex'}}>
                     <Grid item  xs={12} lg={4}>
-            {userLocation.isVaid && <div> <img src="" alt=""/> <p style={{color : 'goldenrod' , fontWeight : '20px' }}>Thank you for choosing from { userLocation.startLocation} to {userLocation.endLocation} . Your rider will contact you in seconds !</p> </div>}
+            {userLocation.isVaid &&  userLocation.startLocation !== '' && userLocation.endLocation !== '' && <div>  <p style={{color : 'goldenrod' , fontWeight : '20px' }}>Thank you for choosing from { userLocation.startLocation} to {userLocation.endLocation} . Your rider will contact you in seconds !</p> </div>}
           
                 <label for="start"><input type="text" onBlur={handleLocation} name="startLocation" id="start"  placeholder="your starting point" required/></label>
                 <br/>
